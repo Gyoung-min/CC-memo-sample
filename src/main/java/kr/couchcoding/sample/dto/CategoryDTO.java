@@ -1,4 +1,4 @@
-package kr.couchcoding.sample.controller.dto;
+package kr.couchcoding.sample.dto;
 
 import lombok.Data;
 
