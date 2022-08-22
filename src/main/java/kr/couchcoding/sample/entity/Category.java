@@ -2,7 +2,7 @@ package kr.couchcoding.sample.entity;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @ToString
+@NoArgsConstructor
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

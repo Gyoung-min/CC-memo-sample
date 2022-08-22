@@ -1,6 +1,7 @@
 package kr.couchcoding.sample.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @ToString
+@NoArgsConstructor
 public class Memo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -4,10 +4,9 @@ import kr.couchcoding.sample.dto.CategoryDTO;
 import kr.couchcoding.sample.entity.Category;
 import kr.couchcoding.sample.service.CategoryService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/categories")
@@ -22,5 +21,15 @@ public class CategoryController {
     @PostMapping("")
     public Category createCategory(@RequestBody CategoryDTO categoryDTO){
         return categoryService.createCategory(categoryDTO);
+    }
+
+    @GetMapping("/{id}")
+    public Category getCategoryById(@PathVariable Long id){
+        return categoryService.getCategoryById(id);
+    }
+
+    @GetMapping("")
+    public Page<Category> getCategories(Pageable pageable, @RequestParam String keyword){
+        return categoryService.getCategories(pageable, keyword);
     }
 }
