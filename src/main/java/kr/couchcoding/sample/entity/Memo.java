@@ -1,5 +1,6 @@
 package kr.couchcoding.sample.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -24,5 +25,11 @@ public class Memo {
 
     @Column(columnDefinition = "TEXT")
     String content;
+
+    @Builder
+    public Memo(String name, String content) {
+        this.name = name;
+        this.content = content;
+    }
 
 }
